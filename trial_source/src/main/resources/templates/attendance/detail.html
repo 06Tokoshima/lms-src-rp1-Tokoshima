@@ -79,6 +79,7 @@
 			setInterval(function() {
 				$("#now").text('現在の時刻は　' + getClock() + '　です。');
 			}, 1000);
+			false && alert("過去日に未入力の勤怠があります。");
 		});
 		function getClock() {
 			const today =  new Date();
