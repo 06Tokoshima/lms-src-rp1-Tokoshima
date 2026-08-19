@@ -85,7 +85,8 @@
 			blank_time = #{blankTime}
 		WHERE student_attendance_id = #{studentAttendanceId}
 	</update>
-	
+
+   <!-- 追加で書いたコード -->
 	<select id="notEnterCount" resultType="int">
     SELECT COUNT(*)
     FROM t_student_attendance

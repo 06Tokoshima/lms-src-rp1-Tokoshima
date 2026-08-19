@@ -333,7 +333,7 @@ public class StudentAttendanceService {
 		// 完了メッセージ
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
-	
+	//追加で書いたコード
 	public Boolean notEnterCheck() throws ParseException {
 		Date today = attendanceUtil.getTrainingDate();
 

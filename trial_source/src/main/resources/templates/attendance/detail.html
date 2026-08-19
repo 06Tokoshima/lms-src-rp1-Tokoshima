@@ -79,10 +79,15 @@
 			setInterval(function() {
 				$("#now").text('現在の時刻は　' + getClock() + '　です。');
 			}, 1000);
-			false && alert("過去日に未入力の勤怠があります。");
+			
+			const notEnterDialog = /*[[${notEnterDialog}]]*/ false;
+			if (notEnterDialog) {
+				alert("過去日の勤怠に未入力があります。");
+			}
 		});
+
 		function getClock() {
-			const today =  new Date();
+			const today = new Date();
 			const hours = ('0' + today.getHours()).slice(-2);
 			const minutes = ('0' + today.getMinutes()).slice(-2);
 			return hours + ':' + minutes;
