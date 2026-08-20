@@ -88,12 +88,15 @@
 
    <!-- 追加で書いたコード -->
 	<select id="notEnterCount" resultType="int">
-    SELECT COUNT(*)
-    FROM t_student_attendance
-    WHERE lms_user_id = #{lmsUserId}
-      AND training_date &lt; #{today}
-      AND (training_start_time IS NULL OR training_start_time = '')
-      AND delete_flg = 0
-</select>
-
+		SELECT COUNT(*)
+		FROM t_student_attendance
+		WHERE lms_user_id = #{lmsUserId}
+		  AND delete_flg = #{deleteFlg}
+		  AND training_date &lt; #{trainingDate}
+		  AND status != 1
+		  AND (
+		      training_start_time IS NULL OR training_start_time = ''
+		      OR training_end_time IS NULL OR training_end_time = ''
+		  )
+	</select>
 </mapper>

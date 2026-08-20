@@ -337,9 +337,12 @@ public class StudentAttendanceService {
 	public Boolean notEnterCheck() throws ParseException {
 		Date today = attendanceUtil.getTrainingDate();
 
-		int count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(), today);
+		int count = tStudentAttendanceMapper.notEnterCount(
+		        loginUserDto.getLmsUserId(),
+		        Constants.DB_FLG_FALSE, 
+		        today
+		    );
 
-		return count > 0;
-	}
-
+		    return count > 0;
+		}
 }

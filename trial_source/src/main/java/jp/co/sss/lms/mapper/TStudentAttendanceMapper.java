@@ -65,12 +65,9 @@ public interface TStudentAttendanceMapper {
 	 */
 	Boolean update(TStudentAttendance tStudentAttendance);
 
+	//追加で書いたコード
 	int notEnterCount(@Param("lmsUserId") Integer lmsUserId,
 			@Param("deleteFlg") Short deleteFlg,
 			@Param("trainingDate") Date trainingDate);
-//追加で書いたコード
-	int notEnterCount(Integer lmsUserId, Date today);
-	
-	
 
 }
